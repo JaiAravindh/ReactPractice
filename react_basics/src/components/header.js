@@ -3,10 +3,12 @@ import React,{Component} from 'react';
 
 class Header extends Component{
         render(){
-          
-               return(
+             return(
                        <header>
-                       <div class="logo">Logo</div>
+                       <div className="logo"
+                                onClick={ ()=> console.log('I was Clicked') }
+                       >Logo
+                       </div>
                        <input type="text"/>
                      </header>
                        )

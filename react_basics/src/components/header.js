@@ -5,12 +5,12 @@ class Header extends Component{
     
     state = {
         keywords:'Hello'
-        active : false;
+        active : 'active';
     }
     
     inputChangeHandler = (event) =>{
        // console.log(event.target.value)
-        const value = event.target.value === '' ? false : true; 
+        const value = event.target.value === '' ? 'active' : 'non-active'; 
         this.setState({
            keywords: event.target.value,
             active : value
@@ -30,7 +30,7 @@ class Header extends Component{
        //}
         
         return(
-            <header style={{background:'${this.state.active ? 'red' : 'blue'}'}}>
+            <header className = {this.state.active} >
                 <div className="logo">Logo</div>
                 <input
                     type='text'

@@ -13,12 +13,12 @@ const App = () => {
         <BrowserRouter>
     <div>
             <Link to="/">Home</Link>
-            <Link to="/posts">Home</Link>
+            <Link to="/posts">posts</Link>
             <Link to={
                 pathname:'/profiles',
                 hash : '#hash1',
                 search:'?profiles=true',
-            }}> Home</Link>
+            }}> profiles</Link>
         
             <Route path="/" exact component={Home}/>   
             <Route path="/posts" component={Posts}/>

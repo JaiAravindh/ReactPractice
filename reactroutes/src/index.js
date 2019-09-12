@@ -14,7 +14,11 @@ const App = () => {
     <div>
             <Link to="/">Home</Link>
             <Link to="/posts">Home</Link>
-            <Link to="/profiles">Home</Link>
+            <Link to={
+                pathname:'/profiles',
+                hash : '#hash1',
+                search:'?profiles=true',
+            }}> Home</Link>
         
             <Route path="/" exact component={Home}/>   
             <Route path="/posts" component={Posts}/>

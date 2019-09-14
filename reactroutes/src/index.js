@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 
 //COMPONENTS
 import Home from './components/home';
@@ -10,7 +10,7 @@ import profiles from './components/profiles';
 
 const App = () => {
     return(
-        <BrowserRouter>
+        <HashRouter>
     <div>
             <Link to="/">Home</Link>
             <Link to="/posts">posts</Link>
@@ -26,7 +26,7 @@ const App = () => {
     </div>
             
             
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

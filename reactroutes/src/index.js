@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {MemoryRouter, Route} from 'react-router-dom';
+import {MemoryRouter, Route, NavLink} from 'react-router-dom';
 
 //COMPONENTS
 import Home from './components/home';
@@ -12,20 +12,24 @@ const App = () => {
     return(
         <MemoryRouter>
     <div>
-            <Link to="/">Home</Link>
-            <Link to="/posts">posts</Link>
-            <Link to={
+        <header>
+            
+            <NavLink to="/">Home</NavLink><br/>
+            <NavLink to="/posts"
+                     activeStyle={{color:'red'}}  
+                     activeClassName="selected" 
+            >posts</NavLink><br/>
+            <NavLink to={{
                 pathname:'/profiles',
-                hash : '#hash1',
-                search:'?profiles=true',
-            }}> profiles</Link>
-        
-            <Route path="/" exact component={Home}/>   
+            }}>profiles</NavLink>
+            <hr/>
+            
+            <Route path="/"  exact component={Home}/>   
             <Route path="/posts" component={Posts}/>
+            <Route path="/posts/:id" component={PostItem}/>
             <Route path="/profiles" component={profiles}/>
+        </header> 
     </div>
-            
-            
         </MemoryRouter>
     )
 }
